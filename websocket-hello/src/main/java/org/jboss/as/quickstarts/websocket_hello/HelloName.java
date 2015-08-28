@@ -23,7 +23,7 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 
-@ServerEndpoint("/websocket/helloName")
+@ServerEndpoint("/")
 public class HelloName {
 
     @OnMessage
@@ -36,7 +36,7 @@ public class HelloName {
     public void helloOnOpen(Session session) {
         System.out.println("WebSocket opened: " + session.getId());
     }
-    
+
     @OnClose
     public void helloOnClose(CloseReason reason) {
         System.out.println("Closing a WebSocket due to " + reason.getReasonPhrase());
